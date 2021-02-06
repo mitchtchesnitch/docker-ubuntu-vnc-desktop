@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>IPA_ACC_PRIV_TEMPLATE</title>
+</head>
+<body>
+
+    <table cellpadding="1" cellspacing="1" border="1">
+    <thead>
+    <tr><td rowspan="1" colspan="3">IPA_ACC_PRIV_TEMPLATE</td></tr>
+    </thead><tbody>
+    
+      <tr>
+        <td>bringBrowserToForeground</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>open</td>
+        <td>https://${!cmd_var1}.gem.test-ipa.nl</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>type</td>
+        <td>id=username</td>
+        <td>administrator@${!cmd_var1}.isampink.nl</td>
+      </tr>
+    
+
+      <tr>
+        <td>type</td>
+        <td>id=password</td>
+        <td>Civility01!</td>
+      </tr>
+    
+
+      <tr>
+        <td>clickAndWait</td>
+        <td>xpath=//*[@id="loginForm"]/fieldset/button</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>waitForElementVisible</td>
+        <td>/html/body/div/div/div[7]/main/div/div[3]/div[2]/div[3]/div[2]/div[1]/div/h3/i</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>verifyElementPresent</td>
+        <td>/html/body/div/div/div[7]/main/div/div[3]/div[2]/div[3]/div[2]/div[1]/div/h3/text()</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>if_v2</td>
+        <td>${!LastCommandOK}</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>IPA_ACC_PRIV_${!cmd_var1}_PASS.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>IPA_ACC_PRIV_${!cmd_var1}_PASS.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>IPA Privgate Test Pass!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>else</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>IPA_ACC_PRIV_${!cmd_var1}_FAIL.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>IPA_ACC_PRIV_${!cmd_var1}_FAIL.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>IPA Privgate Test Fail!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>end</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>/html/body/div/div/div[7]/nav/div/span/span/button/div</td>
+        <td></td>
+      </tr>
+    
+    </tbody></table>
+  
+<script>
+(function() {
+  var isExtensionLoaded = function () {
+    const $root = document.documentElement
+    return !!$root && !!$root.getAttribute('data-kantu')
+  }
+  var increaseCountInUrl = function (max) {
+    var url   = new URL(window.location.href)
+    var count = 1 + (parseInt(url.searchParams.get('reload') || 0))
+
+    url.searchParams.set('reload', count)
+    var nextUrl = url.toString()
+
+    var shouldStop = count > max
+    return [shouldStop, !shouldStop ? nextUrl : null]
+  }
+  var run = function () {
+    try {
+      var evt = new CustomEvent('kantuSaveAndRunMacro', {
+        detail: {
+          html: document.documentElement.outerHTML,
+          noImport: false,
+          storageMode: 'browser'
+        }
+      })
+
+      window.dispatchEvent(evt)
+      setInterval(() => window.dispatchEvent(evt), 1000);
+
+      if (window.location.protocol === 'file:') {
+        var onInvokeSuccess = function () {
+          clearTimeout(timer)
+          clearTimeout(reloadTimer)
+          window.removeEventListener('kantuInvokeSuccess', onInvokeSuccess)
+        }
+        var timer = setTimeout(function () {
+          alert('Error #203: It seems you need to turn on *Allow access to file URLs* for Kantu in your browser extension settings.')
+        }, 8000)
+
+        window.addEventListener('kantuInvokeSuccess', onInvokeSuccess)
+      }
+    } catch (e) {
+      alert('Kantu Bookmarklet error: ' + e.toString());
+    }
+  }
+  var reloadTimer = null
+  var main = function () {
+    if (isExtensionLoaded())  return run()
+
+    var MAX_TRY   = 3
+    var INTERVAL  = 1000
+    var tuple     = increaseCountInUrl(MAX_TRY)
+
+    if (tuple[0]) {
+      return alert('Error #204: It seems UI.Vision RPA is not installed yet - or you need to turn on *Allow access to file URLs* for UI.Vision RPA in your browser extension settings.')
+    } else {
+      reloadTimer = setTimeout(function () {
+        window.location.href = tuple[1]
+      }, INTERVAL)
+    }
+  }
+
+  setTimeout(main, 500)
+})();
+</script>
+</body>
+</html>
+  

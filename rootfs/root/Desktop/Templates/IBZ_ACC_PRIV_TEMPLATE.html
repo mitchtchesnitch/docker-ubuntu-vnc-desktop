@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="" />
+<title>IBZ_ACC_GEM_TEMPLATE</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">IBZ_PRD_GEM_TEMPLATE</td></tr>
+</thead><tbody>
+
+      <tr>
+        <td>bringBrowserToForeground</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>open</td>
+        <td>https://${!cmd_var1}.gem.ibzpink.nl</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>type</td>
+        <td>id=username</td>
+        <td>prlg_support@${!cmd_var1}.ibzpink.nl</td>
+      </tr>
+    
+
+      <tr>
+        <td>type</td>
+        <td>id=password</td>
+        <td>d?OFybZT!4</td>
+      </tr>
+    
+
+      <tr>
+        <td>store</td>
+        <td>4</td>
+        <td>!TIMEOUT_WAIT</td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="loginForm"]/fieldset/button</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>verifyElementPresent</td>
+        <td>/html/body/div[4]/div[1]/span</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>if_v2</td>
+        <td>${!LastCommandOK}</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>store</td>
+        <td>12</td>
+        <td>!TIMEOUT_WAIT</td>
+      </tr>
+    
+
+      <tr>
+        <td>gotoLabel</td>
+        <td>IS_PRESENT</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>else</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>store</td>
+        <td>15</td>
+        <td>!TIMEOUT_WAIT</td>
+      </tr>
+    
+
+      <tr>
+        <td>gotoLabel</td>
+        <td>IS_NOT_PRESENT</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>end</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>label</td>
+        <td>IS_PRESENT</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="ui-id-1"]/form/div/div/div/div/div/div/ul/li[1]/label</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="selectworkstationconfirm"]</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>label</td>
+        <td>IS_NOT_PRESENT</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="wrapper"]/nav/ul[1]/li[2]/a</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>/html/body/div[2]/article/div[2]/nav/div/ul/li[15]/h3/span</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>/html/body/div[2]/article/div[2]/nav/div/ul/li[16]/h3</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>/html/body/div[2]/article/div[2]/nav/div/ul/li[16]/div/ul/li[5]/a</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>verifyElementPresent</td>
+        <td>/html/body/div[2]/article/div[1]/form/div[2]/div[2]/div/div/fieldset/div[3]/span</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>if_v2</td>
+        <td>${!LastCommandOK}</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>Technical Configuration Test PASS!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_TechnicalConf</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_TechnicalConf.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>else</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>Technical Configuration Test FAIL!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_TechnicalConf</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_TechnicalConf.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>end</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="zoekslider"]</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>type</td>
+        <td>id=defaultgenericsearchinput</td>
+        <td>B*</td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="genericsearchdefaultsearch"]</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>verifyText</td>
+        <td>/html/body/div[2]/article/div[3]/section/form/fieldset[2]/ul/li</td>
+        <td>GebruikersID nietgeldig is onbekend</td>
+      </tr>
+    
+
+      <tr>
+        <td>if_v2</td>
+        <td>${!LastCommandOK}</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>Person Search Test PASS!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_PersonSearch_PASS</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_PersonSearch_PASS.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>else</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>Person Search Test FAIL!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_PersonSearch_FAIL</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_PersonSearch_FAIL.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>end</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>type</td>
+        <td>id=defaultgenericsearchinput</td>
+        <td>000000000</td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="search-wrapper"]/section/form/fieldset[1]/div/div[2]/div/div/button[2]</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>pause</td>
+        <td>1000</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>verifyText</td>
+        <td>/html/body/div[2]/article/div[3]/section/form/fieldset[2]/ul/li</td>
+        <td>Geen gegevens gevonden</td>
+      </tr>
+    
+
+      <tr>
+        <td>if_v2</td>
+        <td>${!LastCommandOK}</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>GBA-V Test PASS!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_GBA-V_PASS.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_GBA-V_PASS.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>else</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>GBA-V Test FAIL!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_GBA-V_FAIL.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>ACC_${!cmd_var1}_${!cmd_var2}_GBA-V_FAIL.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>end</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>xpath=//*[@id="wrapper"]/nav/ul[1]/li[2]/a</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>xpath=//*[@id="my-apps-wrapper"]/nav/div/ul/li[6]/h3</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>link=Raadplegen rijbewijs</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>type</td>
+        <td>id=P957-C2-C2-C0-C0-C0-F0</td>
+        <td>000000000</td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="P957-C2-C2-C0-C0-C0-B1"]/span</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>pause</td>
+        <td>4000</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>verifyText</td>
+        <td>/html/body/div[2]/article/div[1]/form/div[2]/div[2]/div[1]/div/div[1]/section/ul/li/span</td>
+        <td>Rubriek heeft een ongeldige waarde</td>
+      </tr>
+    
+
+      <tr>
+        <td>if_v2</td>
+        <td>${!LastCommandOK}</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>RDW Test PASS!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>ACC_${!cmd_var1}_ACC_${!cmd_var2}_RDW_PASS</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>ACC_${!cmd_var1}_ACC_${!cmd_var2}_RDW_PASS.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>else</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>echo</td>
+        <td>RDW TEST FAIL!</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>captureEntirePageScreenshot</td>
+        <td>ACC_${!cmd_var1}_ACC_${!cmd_var2}_RDW_FAIL</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>localStorageExport</td>
+        <td>ACC_${!cmd_var1}_ACC_${!cmd_var2}_RDW_FAIL.png</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>end</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>click</td>
+        <td>//*[@id="pageheader"]/section/ul/li[2]/a</td>
+        <td></td>
+      </tr>
+    
+
+      <tr>
+        <td>deleteAllCookies</td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+</tbody></table>
+<script>
+(function() {
+  var isExtensionLoaded = function () {
+    const $root = document.documentElement
+    return !!$root && !!$root.getAttribute('data-kantu')
+  }
+  var increaseCountInUrl = function (max) {
+    var url   = new URL(window.location.href)
+    var count = 1 + (url.searchParams.get('reload') || 0)
+
+    url.searchParams.set('reload', count)
+    var nextUrl = url.toString()
+
+    var shouldStop = count > max
+    return [shouldStop, !shouldStop ? nextUrl : null]
+  }
+  var run = function () {
+    try {
+      var evt = new CustomEvent('kantuSaveAndRunMacro', { detail: { html: document.documentElement.outerHTML, storageMode: 'browser' } })
+
+      window.dispatchEvent(evt)
+      setInterval(() => window.dispatchEvent(evt), 1000);
+
+      if (window.location.protocol === 'file:') {
+        var onInvokeSuccess = function () {
+          clearTimeout(timer)
+          clearTimeout(reloadTimer)
+          window.removeEventListener('kantuInvokeSuccess', onInvokeSuccess)
+        }
+        var timer = setTimeout(function () {
+          alert('Error #203: It seems you need to turn on *Allow access to file URLs* for Kantu in your browser extension settings.')
+        }, 8000)
+
+        window.addEventListener('kantuInvokeSuccess', onInvokeSuccess)
+      }
+    } catch (e) {
+      alert('Kantu Bookmarklet error: ' + e.toString());
+    }
+  }
+  var reloadTimer = null
+  var main = function () {
+    if (isExtensionLoaded())  return run()
+
+    var MAX_TRY   = 3
+    var INTERVAL  = 1000
+    var tuple     = increaseCountInUrl(MAX_TRY)
+
+    if (tuple[0]) {
+      return alert('Error #204: It seems UI.Vision RPA is not installed yet - or you need to turn on *Allow access to file URLs* for UI.Vision RPA in your browser extension settings.')
+    } else {
+      reloadTimer = setTimeout(function () {
+        window.location.href = tuple[1]
+      }, INTERVAL)
+    }
+  }
+
+  main()
+})();
+</script>
+</body>
+</html>
+  

@@ -121,7 +121,7 @@ COPY rootfs /
 RUN tar -xvzf /root/.config/google_chrome_settings.tar.gz -C /root/.config \
     && rm -f /root/.config/google_chrome_settings.tar.gz \
     && mkdir -p /root/Downloads \
-    && ln -sf /root/Desktop/Downloads /root/Downloads
+    && ln -sf /root/Downloads /root/Desktop/Downloads
 
 RUN ln -sf /usr/local/lib/web/frontend/static/websockify /usr/local/lib/web/frontend/static/novnc/utils/websockify && \
         chmod +x /usr/local/lib/web/frontend/static/websockify/run

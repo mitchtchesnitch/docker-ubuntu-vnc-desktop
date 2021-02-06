@@ -50,8 +50,7 @@ RUN apt update \
 
 #Add google settings
 
-RUN cd /root/.config \
-    && tar -xvzf google_chrome_settings.tar.gz -C /root/.config
+RUN tar -xvzf google_chrome_settings.tar.gz -C /root/.config
 
 # tini to fix subreap
 ARG TINI_VERSION=v0.18.0

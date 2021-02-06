@@ -48,9 +48,6 @@ RUN apt update \
     && rm google-chrome-stable_current_amd64.deb \
     && rm -rf /var/lib/apt/lists/*
 
-#Add google settings
-
-RUN tar -xvzf /root/.config/google_chrome_settings.tar.gz -C /root/.config && rm -f /root/.config/google_chrome_settings.tar.gz
 
 # tini to fix subreap
 ARG TINI_VERSION=v0.18.0
@@ -119,6 +116,10 @@ LABEL maintainer="fcwu.tw@gmail.com"
 
 COPY --from=builder /src/web/dist/ /usr/local/lib/web/frontend/
 COPY rootfs /
+
+#Add google settings
+RUN tar -xvzf /root/.config/google_chrome_settings.tar.gz -C /root/.config && rm -f /root/.config/google_chrome_settings.tar.gz
+
 RUN ln -sf /usr/local/lib/web/frontend/static/websockify /usr/local/lib/web/frontend/static/novnc/utils/websockify && \
         chmod +x /usr/local/lib/web/frontend/static/websockify/run
 

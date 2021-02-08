@@ -27,7 +27,7 @@ RUN apt update \
 RUN apt update \
     && apt install -y --no-install-recommends --allow-unauthenticated \
         xvfb x11vnc \
-        vim ttf-ubuntu-font-family ttf-wqy-zenhei ssh sshpass openconnect fuse \
+        vim ttf-ubuntu-font-family ttf-wqy-zenhei ssh sshpass openconnect fuse iputils-ping \
     && apt autoclean -y \
     && apt autoremove -y \
     && rm -rf /var/lib/apt/lists/*

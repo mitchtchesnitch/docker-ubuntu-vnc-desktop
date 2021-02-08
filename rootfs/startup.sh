@@ -72,4 +72,7 @@ fi
 PASSWORD=
 HTTP_PASSWORD=
 
+#custom prep scripts
+chmod +x /root/Desktop/Scripts/*
+
 exec /bin/tini -- supervisord -n -c /etc/supervisor/supervisord.conf
